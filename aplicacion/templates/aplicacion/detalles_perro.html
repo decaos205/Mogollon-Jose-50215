@@ -1,0 +1,42 @@
+{% extends 'aplicacion/index.html' %}
+
+
+{% block product_section %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Sexo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ perro.nombre }}</td>
+                        <td>{{ perro.raza }}</td>
+                        <td>{{ perro.sexo }}</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="media/{{perro.imagen}}" alt="..." /></div>
+            <div class="col-md-6">
+                <!--<h1 class="display-5 fw-bolder">Bienvenido a Encuentralo.com</h1>-->
+                <p class="lead">Buenas tardes, mi nombre es {{perro.nombre}} y me perdí en {{perro.lugar_de_desaparicion}} el {{perro.fecha_de_desaparicion}} aproximadamente</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock product_section %}
+    
+
+
+{% block related_items %}
+    
+{% endblock related_items %}
+    

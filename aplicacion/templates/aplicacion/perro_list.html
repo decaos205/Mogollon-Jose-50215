@@ -1,0 +1,50 @@
+{% extends 'aplicacion/index.html' %}
+
+
+{% block product_section %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <h1 class="display-5 fw-bolder">Perros</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Sexo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for perro in perro_list %}
+                    <tr>
+                        <td>
+                            <a class="" href="{% url 'detalles_perro' perro.id %}">{{ perro.nombre }}</a>
+                        </td>
+                        <td>{{ perro.raza }}</td>
+                        <td>{{ perro.sexo }}</td>
+                        <td>
+                            <a class="nav-link" href="{% url 'perro_delete' perro.id %}">Eliminar</a>
+                            <a class="nav-link" href="{% url 'perro_update' perro.id %}">Actualizar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+            <button class="btn btn-outline-dark" type="submit">
+                <a class="nav-link" href="{% url 'perro_create' %}">Agregar tu post de búsqueda</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+{% endblock product_section %}
+
+
+
+{% block related_items %}
+
+{% endblock related_items %}

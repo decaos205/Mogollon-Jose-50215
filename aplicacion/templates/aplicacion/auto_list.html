@@ -1,0 +1,50 @@
+{% extends 'aplicacion/index.html' %}
+
+
+{% block product_section %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <h1 class="display-5 fw-bolder">Autos</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for auto in auto_list %}
+                    <tr>
+                        <td>
+                            <a class="" href="{% url 'detalles_auto' auto.id %}">{{ auto.marca }}</a>
+                        </td>
+                        <td>{{ auto.modelo }}</td>
+                        <td>{{ auto.placa }}</td>
+                        <td>
+                            <a class="nav-link" href="{% url 'auto_delete' auto.id %}">Eliminar</a>
+                            <a class="nav-link" href="{% url 'auto_update' auto.id %}">Actualizar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+            <button class="btn btn-outline-dark" type="submit">
+                <a class="nav-link" href="{% url 'auto_create' %}">Agregar tu post de búsqueda</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+{% endblock product_section %}
+
+
+
+{% block related_items %}
+
+{% endblock related_items %}

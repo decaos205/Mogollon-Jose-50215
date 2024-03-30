@@ -1,0 +1,23 @@
+{% extends 'aplicacion/index.html' %}
+
+
+{% block product_section %}
+<section class="py-5">
+    <h1 class="display-5 fw-bolder">Búsqueda</h1>
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            
+            <form action="{% url 'encontrar_perros' %}" method = "get">
+                {% csrf_token %}
+                <p>Ingrese la raza de mascota que desea buscar: <input type="text" name="buscar" id="buscar"></p>
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock product_section %}
+
+
+{% block related_items %}
+    
+{% endblock related_items %}

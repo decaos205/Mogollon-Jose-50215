@@ -1,0 +1,20 @@
+{% extends 'aplicacion/index.html' %}
+
+
+{% block product_section %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="text-center">
+        <h3>¿Seguro de eliminar su publicación?
+    </div>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary btn-block" value="Confirmar">
+    </div>
+</form>
+{% endblock product_section %}
+    
+
+{% block related_items %}
+    
+{% endblock related_items %}
+    
